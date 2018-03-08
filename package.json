@@ -11,8 +11,8 @@
     "url": "https://github.com/ecmascriptforever/hapi-darwin.git"
   },
   "keywords": [
-      "hapi",
-      "upload"
+    "hapi",
+    "upload"
   ],
   "bugs": {
     "url": "https://github.com/ecmascriptforever/hapi-darwin/issues"
@@ -22,10 +22,16 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "globby": "^8.0.1",
+    "mkdirp": "^0.5.0",
+    "sharp": "^0.20.0"
+  },
   "devDependencies": {
     "code": "^5.0.0",
     "hapi": "^17.0.0",
-    "lab": "^15.0.0"
+    "lab": "^15.0.0",
+    "proxyquire": "^2.0.0",
+    "sinon": "^4.0.0"
   }
 }
