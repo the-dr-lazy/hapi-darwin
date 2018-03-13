@@ -23,7 +23,7 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
-    "globby": "^8.0.1",
+    "globby": "^8.0.0",
     "mkdirp": "^0.5.0",
     "sharp": "^0.20.0"
   },
@@ -32,7 +32,6 @@
     "del": "^3.0.0",
     "eslint-plugin-hapi": "^4.1.0",
     "hapi": "^17.0.0",
-    "lab": "^15.0.0",
-    "rereadable-stream": "^1.0.2"
+    "lab": "^15.0.0"
   }
 }

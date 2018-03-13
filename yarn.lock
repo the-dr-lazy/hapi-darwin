@@ -857,7 +857,7 @@ globby@^6.1.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
-globby@^8.0.1:
+globby@^8.0.0:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/globby/-/globby-8.0.1.tgz#b5ad48b8aa80b35b814fc1281ecc851f1d2b5b50"
   dependencies:
@@ -1693,10 +1693,6 @@ require-uncached@^1.0.3:
   dependencies:
     caller-path "^0.1.0"
     resolve-from "^1.0.0"
-
-rereadable-stream@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/rereadable-stream/-/rereadable-stream-1.0.2.tgz#34ca9a770f5e81da4dca6e64dc880ba601610190"
 
 resolve-from@^1.0.0:
   version "1.0.1"
