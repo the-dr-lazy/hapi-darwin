@@ -4,7 +4,7 @@
   "description": "simple image storage",
   "main": "index.js",
   "scripts": {
-    "test": "lab -c -L"
+    "test": "lab -c -L -a code"
   },
   "repository": {
     "type": "git",
@@ -29,10 +29,10 @@
   },
   "devDependencies": {
     "code": "^5.0.0",
+    "del": "^3.0.0",
     "eslint-plugin-hapi": "^4.1.0",
     "hapi": "^17.0.0",
     "lab": "^15.0.0",
-    "proxyquire": "^2.0.0",
-    "sinon": "^4.0.0"
+    "rereadable-stream": "^1.0.2"
   }
 }

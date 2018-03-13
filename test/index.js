@@ -12,6 +12,10 @@ describe('Plugin Registration', () => {
         const server = new Hapi.Server();
 
         expect(async () => await server.register(Plugin)).to.not.throws();
-        expect(server.plugins[Plugin.name].uploader).to.be.function();
+
+        const { uploader } = server.plugins[Plugin.name];
+
+        expect(uploader).to.be.function();
+        expect(uploader()).to.rejects();
     });
 });
