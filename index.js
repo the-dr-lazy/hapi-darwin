@@ -5,7 +5,7 @@ const uploader = require('./lib/uploader');
 const register = (server, options) => {
 
     options = {
-        dest: `${__dirname}/images`,
+        dest: `./images`,
         name: undefined,
         safeName: true,
         formats: ['jpeg', 'png', 'gif', 'webp'],
