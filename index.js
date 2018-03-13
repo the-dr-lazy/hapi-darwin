@@ -18,7 +18,7 @@ const register = (server, options) => {
     };
 
     server.expose({
-        uploader: (file, opts = {}) => uploader(file, { ...options, ...opts })
+        uploader: (files, opts = {}) => uploader(files, { ...options, ...opts })
     });
 };
 
