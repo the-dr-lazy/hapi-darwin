@@ -6,7 +6,7 @@ const register = (server, options) => {
 
     options = {
         dest: `./images`,
-        name: undefined,
+        names: undefined,
         safeName: true,
         formats: ['jpeg', 'png', 'gif', 'webp'],
         maxFiles: 1,
