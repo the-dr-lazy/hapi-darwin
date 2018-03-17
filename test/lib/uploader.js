@@ -11,10 +11,9 @@ const uploader = require('../../lib/uploader');
 
 describe('Uploader', async () => {
 
-    const path = join(__dirname, `../image.webp`);
-    const metadata = await sharp(path).metadata();
+    const metadata = await sharp(join(__dirname, `../image.webp`)).metadata();
 
-    const createImageStream = () => {
+    const createImageStream = (path = join(__dirname, `../image.webp`)) => {
 
         const stream = createReadStream(path);
         stream.hapi = { filename: basename(path) };
@@ -171,5 +170,16 @@ describe('Uploader', async () => {
         expect(upload.path).to.endsWith(file.hapi.filename);
         expect(file.metadata.width).to.be.equal(width);
         expect(file.metadata.height).to.be.equal(height);
+    });
+
+    it('should resize image correctly', async () => {
+
+        const version = { width: 100, height: 200, suffix: 'test' };
+
+        const { path } = await uploader(createImageStream(), { ...options, versions: [version] });
+        const { width, height } = await sharp(path).metadata();
+
+        expect(width).to.equal(version.width);
+        expect(height).to.equal(version.height);
     });
 });
