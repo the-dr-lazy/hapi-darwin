@@ -135,6 +135,7 @@ Define `array` of version `object` with:
 
 - `width` (number) - pixels width the version image should be. Use `null` or `undefined` to auto-scale the width to match the height.
 - `height` (number) - pixels height the version image should be. Use `null` or `undefined` to auto-scale the height to match the width.
+- `enlargement` (boolean) - enlarge the output image if the input image width or height are already less than the required dimensions; default is false.
 - `suffix` (string) - suffix of version filename.
 
 Example:
