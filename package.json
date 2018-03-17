@@ -1,6 +1,6 @@
 {
   "name": "@esforever/hapi-darwin",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "simple image storage",
   "main": "index.js",
   "scripts": {
