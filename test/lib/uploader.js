@@ -174,12 +174,20 @@ describe('Uploader', async () => {
 
     it('should resize image correctly', async () => {
 
-        const version = { width: 100, height: 200, suffix: 'test' };
+        const firstVersion = { width: 100, height: 200, suffix: 'test' };
 
-        const { path } = await uploader(createImageStream(), { ...options, versions: [version] });
-        const { width, height } = await sharp(path).metadata();
+        const firstUpload = await uploader(createImageStream(), { ...options, versions: [firstVersion] });
+        const firstMetadata = await sharp(firstUpload.path).metadata();
 
-        expect(width).to.equal(version.width);
-        expect(height).to.equal(version.height);
+        expect(firstMetadata.width).to.equal(firstVersion.width);
+        expect(firstMetadata.height).to.equal(firstVersion.height);
+
+        const secondVersion = { width: firstVersion.width + 1, height: firstVersion.height + 1 };
+        const secondUpload = await uploader(createImageStream(firstUpload.path), { ...options, versions: [secondVersion] });
+
+        const secondMetadata = await sharp(secondUpload.path).metadata();
+
+        expect(secondMetadata.width).to.equal(firstVersion.width);
+        expect(secondMetadata.height).to.equal(firstVersion.height);
     });
 });
