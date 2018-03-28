@@ -24,6 +24,7 @@ const register = (server, options) => {
 
 module.exports = {
     register,
+    once: true,
     pkg: require('./package.json'),
-    name: 'hapi-darwin'
+    name: '@esforever/hapi-darwin'
 };
