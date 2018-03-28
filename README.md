@@ -30,8 +30,6 @@ await server.register({
 ```js
 'use strict';
 
-const uploader = server.plugins['hapi-darwin'].uploader;
-
 server.route({
     method: 'POST',
     path: '/path/to/endpoint',
@@ -42,6 +40,8 @@ server.route({
         }
     },
     handler: async ({ payload }, h) => {
+
+        const { uploader } = server.plugins['@esforever/hapi-darwin'];
 
         try {
             return await uploader(payload.avatar, { names: 'avatar' });
