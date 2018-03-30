@@ -26,5 +26,5 @@ module.exports = {
     register,
     once: true,
     pkg: require('./package.json'),
-    name: '@esforever/hapi-darwin'
+    name: '@ecmacommunity/hapi-darwin'
 };

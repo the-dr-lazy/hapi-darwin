@@ -1,5 +1,5 @@
 {
-  "name": "@esforever/hapi-darwin",
+  "name": "@ecmacommunity/hapi-darwin",
   "version": "1.0.0",
   "description": "simple image storage",
   "main": "index.js",

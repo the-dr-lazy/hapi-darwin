@@ -9,14 +9,14 @@ A Hapi plugin for image storage
 ## Install
 
 ```bash
-$ npm install @esforever/hapi-darwin
+$ npm install @ecmacommunity/hapi-darwin
 ```
 
 ## Register
 
 ```js
 await server.register({
-    plugin: require('@esforever/hapi-darwin'),
+    plugin: require('@ecmacommunity/hapi-darwin'),
     options: {
         // Any uploader method options
         dest: './path/to/destination',
@@ -41,7 +41,7 @@ server.route({
     },
     handler: async ({ payload }, h) => {
 
-        const { uploader } = server.plugins['@esforever/hapi-darwin'];
+        const { uploader } = server.plugins['@ecmacommunity/hapi-darwin'];
 
         try {
             return await uploader(payload.avatar, { names: 'avatar' });
