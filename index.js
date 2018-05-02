@@ -2,7 +2,7 @@
 
 const uploader = require('./lib/uploader');
 
-const register = (server, options) => {
+const register = (server, options, next) => {
 
     options = {
         dest: `./images`,
@@ -20,11 +20,17 @@ const register = (server, options) => {
     server.expose({
         uploader: (files, opts = {}) => uploader(files, { ...options, ...opts })
     });
+
+    next && next();
+};
+
+register.attributes = {
+    once: true,
+    pkg: require('./package.json'),
+    name: '@ecmacommunity/hapi-darwin'
 };
 
 module.exports = {
     register,
-    once: true,
-    pkg: require('./package.json'),
-    name: '@ecmacommunity/hapi-darwin'
+    ...register.attributes
 };
