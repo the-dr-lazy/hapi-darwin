@@ -27,7 +27,7 @@ const register = (server, options, next) => {
 register.attributes = {
     once: true,
     pkg: require('./package.json'),
-    name: '@ecmacommunity/hapi-darwin'
+    name: 'hapi-darwin'
 };
 
 module.exports = {

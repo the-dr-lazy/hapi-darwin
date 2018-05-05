@@ -1,6 +1,6 @@
 {
-  "name": "@ecmacommunity/hapi-darwin",
-  "version": "1.1.0",
+  "name": "hapi-darwin",
+  "version": "1.1.1",
   "description": "simple image storage",
   "main": "index.js",
   "scripts": {
