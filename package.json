@@ -1,7 +1,7 @@
 {
   "name": "hapi-darwin",
   "version": "1.1.1",
-  "description": "simple image storage",
+  "description": "Simple image storage",
   "main": "index.js",
   "scripts": {
     "test": "lab -c -L -a code"
