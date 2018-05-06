@@ -9,14 +9,14 @@ A Hapi plugin for image storage
 ## Install
 
 ```bash
-$ npm install @ecmacommunity/hapi-darwin
+$ npm install hapi-darwin
 ```
 
 ## Register
 
 ```js
 await server.register({
-    plugin: require('@ecmacommunity/hapi-darwin'),
+    plugin: require('hapi-darwin'),
     options: {
         // Any uploader method options
         dest: './path/to/destination',
@@ -28,28 +28,27 @@ await server.register({
 ## Usage
 
 ```js
-'use strict';
+"use strict";
 
 server.route({
-    method: 'POST',
-    path: '/path/to/endpoint',
+    method: "POST",
+    path: "/path/to/endpoint",
     options: {
         payload: {
-            allow: 'multipart/form-data',
-            output: 'stream'
+            allow: "multipart/form-data",
+            output: "stream"
         }
     },
     handler: async ({ payload }, h) => {
-
-        const { uploader } = server.plugins['@ecmacommunity/hapi-darwin'];
+        const { uploader } = server.plugins["hapi-darwin"];
 
         try {
-            return await uploader(payload.avatar, { names: 'avatar' });
+            return await uploader(payload.avatar, { names: "avatar" });
         } catch (err) {
             // ...
         }
     }
-})
+});
 ```
 
 ## API
@@ -58,8 +57,8 @@ server.route({
 
 Returns a Promise for `object` or `object[]` or `object[][]` with:
 
-- `filename` (string) - corrected filename
-- `path` (string) - absolute path of uploaded version
+*   `filename` (string) - corrected filename
+*   `path` (string) - absolute path of uploaded version
 
 #### files
 
@@ -133,18 +132,15 @@ Default: `[]`
 
 Define `array` of version `object` with:
 
-- `width` (number) - pixels width the version image should be. Use `null` or `undefined` to auto-scale the width to match the height.
-- `height` (number) - pixels height the version image should be. Use `null` or `undefined` to auto-scale the height to match the width.
-- `enlargement` (boolean) - enlarge the output image if the input image width or height are already less than the required dimensions; default is false.
-- `suffix` (string) - suffix of version filename.
+*   `width` (number) - pixels width the version image should be. Use `null` or `undefined` to auto-scale the width to match the height.
+*   `height` (number) - pixels height the version image should be. Use `null` or `undefined` to auto-scale the height to match the width.
+*   `enlargement` (boolean) - enlarge the output image if the input image width or height are already less than the required dimensions; default is false.
+*   `suffix` (string) - suffix of version filename.
 
 Example:
 
 ```js
-versions: [
-    { width: 128, height: 128 },
-    { width: 64, suffix: 'thumbnail' }
-]
+versions: [{ width: 128, height: 128 }, { width: 64, suffix: "thumbnail" }];
 ```
 
 ##### addOriginal
